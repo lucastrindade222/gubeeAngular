@@ -1,0 +1,63 @@
+
+<br>
+<mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Mercado alvo</mat-radio-button>
+    <mat-radio-button value="2">Pilha</mat-radio-button>
+</mat-radio-group>
+  
+
+
+
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+    <div class="form-group">
+        <label class="bmd-label-floating">Ids</label>
+        <input type="text" name="ids" [(ngModel)]="ids" class="form-control" />
+    </div>
+    <button type="submit" mat-raised-button color="primary">Salvar</button>
+
+</form>
+
+<h2>Mercado Alvo</h2>
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="header text-center">
+        <!-- <p class="category">
+          </p> -->
+      </div>
+      <div class="row">
+        
+  
+        <div class="container-fluid" >
+          <h1>Produtos</h1>
+  
+          <div *ngFor="let product of product" class="row mt-4">
+            <div   class="col-lg-3 col-md-5 col-sm-6 col-xs-4" >
+              <div class="card card-product"  >
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <div>
+                    <h4 class="card-title ">
+                    </h4>
+  
+                    <div class="card-description text-black-50">
+                    
+                      <h3><h2>Nome do Produto</h2> {{product.productName}} </h3>
+  
+                      <h3><h2>Discrição do Produto</h2> {{product.description}} </h3>
+                      
+                      <h3 *ngFor="let stack of product.stack"><h2>Lista</h2> {{stack.name}} </h3>
+                      <h3 *ngFor="let targetMarket of product.targetMarket"><h2> Marcas alvo</h2> {{targetMarket.name}} </h3>
+                    </div>
+   
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>

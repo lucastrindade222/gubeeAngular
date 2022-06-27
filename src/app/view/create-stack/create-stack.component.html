@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+    <div class="form-group">
+        <label class="bmd-label-floating">Nome do pilha</label>
+        <input type="text" name="name" [(ngModel)]="stack.name" class="form-control" />
+    </div>
+
+  
+    <button type="submit" mat-raised-button color="primary">Salvar</button>
+    
+ 
+
+</form>
+

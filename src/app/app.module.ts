@@ -11,11 +11,28 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
- 
+import { ListProductComponent } from './view/list-product/list-product.component';
+import { CreateProductsComponent } from './view/create-products/create-products.component';
+import { CreateTargetMarketComponent } from './view/create-target-market/create-target-market.component';
+import { CreateStackComponent } from './view/create-stack/create-stack.component';
+import { FormsModule } from "@angular/forms";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LinkProductComponent } from './view/link-product/link-product.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+import {MatRadioModule} from '@angular/material/radio';
+import { SearchComponent } from './view/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavComponent
+    MainNavComponent,
+    ListProductComponent,
+    CreateProductsComponent,
+    CreateTargetMarketComponent,
+    CreateStackComponent,
+    LinkProductComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +44,13 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    HttpClientModule
- 
+    HttpClientModule,
+    FormsModule,
+    MatSnackBarModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

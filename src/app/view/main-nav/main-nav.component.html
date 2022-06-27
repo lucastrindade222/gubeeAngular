@@ -3,11 +3,43 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar [routerLink]="['']">Menu<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon></mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Criar Produto</a>
-      <a mat-list-item href="#">Criar Mercado alvo</a>
-      <a mat-list-item href="#">Criar Pilha</a>
+
+      <button mat-button class="menu-button"   [routerLink]="['/createproducts']">
+        <mat-icon
+          class="example-icon favorite-icon"aria-label="Example icon-button with heart icon">format_list_numbered</mat-icon
+        >
+        <span>Criar Produto</span>
+    </button>
+    
+    <button mat-button class="menu-button"   [routerLink]="['/targetMarket']">
+      <mat-icon
+        class="example-icon favorite-icon"aria-label="Example icon-button with heart icon">format_list_numbered</mat-icon
+      >
+      <span>Criar Mercado alvo</span>
+  </button>
+
+  <button mat-button class="menu-button"   [routerLink]="['/createstack']">
+    <mat-icon
+      class="example-icon favorite-icon"aria-label="Example icon-button with heart icon">format_list_numbered</mat-icon
+    >
+    <span>Criar Pilha</span>
+</button>
+<button mat-button class="menu-button"   [routerLink]="['/connectionbetweenproducts']">
+  <mat-icon
+    class="example-icon favorite-icon"aria-label="Example icon-button with heart icon">format_list_numbered</mat-icon
+  >
+  <span>Conexão entre produtos</span>
+</button>
+
+<button mat-button class="menu-button"   [routerLink]="['/sear']">
+  <mat-icon
+    class="example-icon favorite-icon"aria-label="Example icon-button with heart icon">format_list_numbered</mat-icon
+  >
+  <span>Buscador</span>
+</button>
+     
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -20,7 +52,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>GubeeAngular</span>
+      <span [routerLink]="['']" >GubeeAngular</span>
     </mat-toolbar>
   
 
@@ -35,53 +67,14 @@
 
 
 
+    <router-outlet></router-outlet>
 
 
 
 
 
 
-
-    <div class="main-content">
-      <div class="container-fluid">
-        <div class="header text-center">
-          <!-- <p class="category">
-            </p> -->
-        </div>
-        <div class="row">
-          
-    
-          <div class="container-fluid" >
-            <h1>Cupons restantes  </h1>
-    
-            <div *ngFor="let product of product" class="row mt-4">
-              <div   class="col-lg-2 col-md-5 col-sm-6 col-xs-4" >
-                <div class="card card-product"  >
-                  <div class="card-body d-flex align-items-center justify-content-center">
-                    <div>
-                      <h4 class="card-title ">
-                      </h4>
-    
-                      <div class="card-description text-black-50">
-                        <h5>Nome do Produto:<br> {{product.productName}} </h5>
-    
-                        <h5>Discrição do Produto:<br> {{product.description}} </h5>
-    
-                        
-                      </div>
-     
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-            </div>
-          </div>
-        </div>
-  
-      </div>
-
-    </div>
+   
 
 
     

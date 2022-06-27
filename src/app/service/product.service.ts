@@ -13,4 +13,13 @@ export class ProductService {
   getfindAll():Observable<Product[]> {
     return this.http.get<Product[]>(Endpoints.PRODUC );
   }
+  getfindsearch(ids:any):Observable<Product[]> {
+    return this.http.get<Product[]>(Endpoints.PRODUC+"/sear?ids="+ids);
+  }
+  post(produc:Product) {
+    return this.http.post(Endpoints.PRODUC+"/salva/produto",produc);
+  }
+  postLink(produc:any): Observable<Object> {
+    return this.http.post(Endpoints.PRODUC+"/link",produc);
+  }
 }

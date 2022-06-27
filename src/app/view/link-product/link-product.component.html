@@ -1,0 +1,77 @@
+<br>
+<i>Voce deve informar o id do produdo que vc quer vincular aos Mercado alvos é Pilha</i>
+<br>
+
+<br>
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+    <div class="form-group">
+        <label class="bmd-label-floating">Ids dos Mercado alvos</label>
+        <input placeholder="Ex:1,2,3,4" type="text" name="market" [(ngModel)]="marketT" class="form-control" />,
+    </div>
+    <div class="form-group">
+      <label class="bmd-label-floating">Ids dos Pilha</label>
+      <input placeholder="Ex:1,2,3,4" type="text" name="stackT" [(ngModel)]="stackT" class="form-control" />
+    </div>
+
+
+  <div class="form-group">
+    <label class="bmd-label-floating">Produto</label>
+    <input name="product" [(ngModel)]="productT"  type="number"  placeholder="Id do Produto unico" class="form-control" />
+</div>
+
+  
+    <button type="submit" mat-raised-button color="primary">Salvar</button>
+    
+ 
+
+</form>
+<br><br>
+<h2><i>Tabelas para consuta de ids</i></h2>
+
+<h2>Pilha</h2>
+<table mat-table [dataSource]="stack" class="mat-elevation-z8">
+
+ 
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.stackId}} </td>
+  </ng-container>
+
+ 
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+</ng-container>
+ 
+
+
+ 
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+<h2>Mercado Alvo</h2>
+<table mat-table [dataSource]="targetMarket" class="mat-elevation-z8">
+
+ 
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.targetId}} </td>
+  </ng-container>
+
+ 
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+</ng-container>
+ 
+
+
+ 
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

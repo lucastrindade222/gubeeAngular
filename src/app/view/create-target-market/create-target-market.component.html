@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+    <div class="form-group">
+        <label class="bmd-label-floating">Nome do Mercado alvo</label>
+        <input type="text" name="targetMarket" [(ngModel)]="targetMarket.name" class="form-control" />
+    </div>
+
+  
+    <button type="submit" mat-raised-button color="primary">Salvar</button>
+    
+ 
+
+</form>
